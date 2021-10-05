@@ -21,5 +21,5 @@ contador++;
 l+=end;
 
 }
-console.log("Timepo deel objeto");
+console.log("Timepo del objeto");
 console.log('Tiempo promedio:',l/7,'ms');
