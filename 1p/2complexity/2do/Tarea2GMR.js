@@ -16,6 +16,5 @@ console.log("Numero Primos")
 console.log(numerosPrimos);
 
 
-console.log("Numero Aleatorio");
-console.log( Math.floor(Math.random() * numeroale));
+
 
