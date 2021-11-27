@@ -7,13 +7,17 @@ function Queue()
     this.back = back;
     this.toString = toString;
     this.empty = empty;
+    this.clear=clear;
 }
 
 function enqueue(element)
 {
     this.dataStore.push(element);
+    
 }
-
+function clear(){
+    this.dataStore.clear();
+}
 function dequeue() 
 {
     return this.dataStore.shift();
@@ -51,16 +55,24 @@ function empty()
 }
 
  var q = new Queue();
-q.enqueue("Meredith");
-q.enqueue("Cynthia");
-q.enqueue("Jennifer"); 
-  
+ var contador=0,pasos=0,l=0,m=0;
+ while (contador < 7) {
+    var start = new Date();
+    for(var i=0;i<10000;i++){
+        q.enqueue(Math.floor(Math.random() * 10000));
+        pasos++;
+    }
+   
     
-console.log(q.toString());
-for(var j=0;j<10;j++){
- q.front();   
+    var end = new Date() - start;
+    
+    console.log('Tiempo de ejecución ',end/10 ,'ms','Pasos:',pasos,'Nomero de Tabla:',contador);
+    
+    l+=end; 
+    m+=pasos;  
+    pasos=0;
+        contador++;
 }
 
-console.log(q.toString());
-console.log("Front of queue: " + q.front());
-console.log("Back of queue: " + q.back());
+    console.log('Tiempo sumado:',l,"ms",'Pasos contados:',m );
+    console.log('Tiempo Promediado:',(l/7),'ms','Pasos Promediados:',(m/7), '\n \n' );
